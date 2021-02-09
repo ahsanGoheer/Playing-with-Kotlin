@@ -9,6 +9,16 @@ fun main() {
     var new_student:Student = Student()
     new_student.change_name("Ahsan Goheer")
     println(new_student.studentName)
+    var calc:Calculator = Calculator()
+    val begin=System.nanoTime()
+    println(calc.calc_square(100))
+    val end=System.nanoTime()
+    
+    
+    
+   
+   	//Compare with other 
+    println("The time elapsed is : ${end-begin} ")
 }
 
 
@@ -26,8 +36,28 @@ class Student
     {
         studentName=name
     }
-    
-
+   
 }
 
-
+class Calculator
+{
+    
+    fun calc_square(a:Int):Int
+    {
+        //Reduced Complexity Calculation.
+        
+        var result:Int =0
+        for (i in 1..a)
+        {
+            result+=a
+        }
+        
+        return result
+    }
+    
+    fun calc_square_mult(a:Int):Int
+    {
+		//Default Complexity. 
+    return a*a
+    }
+}
